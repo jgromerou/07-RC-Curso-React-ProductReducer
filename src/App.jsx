@@ -10,7 +10,7 @@ function App() {
       <div className="container-fliud">
           <div className="row text-center mb-5 mt-5">
               <div className="col-lg-7 mx-auto">
-                  <h1 className="display-4">Product List</h1>
+                  <h1 className="display-4" style={{  fontWeight:'lighter'}}>Product Reducer</h1>
               </div>
           </div>
           <div className="row p-5"  style={{ backgroundColor: '#000'}}>
@@ -37,6 +37,7 @@ function App() {
                     <th scope="col">ID</th>
                     <th scope="col">PRODUCTO</th>
                     <th scope="col">PRECIO</th>
+                    <th scope="col">ACTIVO</th>
                     <th scope="col"></th>
                   </tr>
                 </thead>
@@ -46,14 +47,10 @@ function App() {
                     <td>Apple iPhone XR (Red, 128 GB)</td>
                     <td>$125.365</td>
                     <td>
-                      <button className='btn btn-info mx-2 btn-sm'>Editar</button>
-                      <button className='btn btn-danger  btn-sm'>Eliminar</button>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked />
+                      </div>
                     </td>
-                  </tr>
-                  <tr>
-                    <th scope="row">SKU-78765</th>
-                    <td>Apple iPhone XR (Red, 128 GB)</td>
-                    <td>$125.365</td>
                     <td>
                       <button className='btn btn-info mx-2 btn-sm'>Editar</button>
                       <button className='btn btn-danger  btn-sm'>Eliminar</button>
@@ -64,14 +61,10 @@ function App() {
                     <td>Apple iPhone XR (Red, 128 GB)</td>
                     <td>$125.365</td>
                     <td>
-                      <button className='btn btn-info mx-2 btn-sm'>Editar</button>
-                      <button className='btn btn-danger  btn-sm'>Eliminar</button>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked />
+                      </div>
                     </td>
-                  </tr>
-                  <tr>
-                    <th scope="row">SKU-78765</th>
-                    <td>Apple iPhone XR (Red, 128 GB)</td>
-                    <td>$125.365</td>
                     <td>
                       <button className='btn btn-info mx-2 btn-sm'>Editar</button>
                       <button className='btn btn-danger  btn-sm'>Eliminar</button>
@@ -82,14 +75,10 @@ function App() {
                     <td>Apple iPhone XR (Red, 128 GB)</td>
                     <td>$125.365</td>
                     <td>
-                      <button className='btn btn-info mx-2 btn-sm'>Editar</button>
-                      <button className='btn btn-danger  btn-sm'>Eliminar</button>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked />
+                      </div>
                     </td>
-                  </tr>
-                  <tr>
-                    <th scope="row">SKU-78765</th>
-                    <td>Apple iPhone XR (Red, 128 GB)</td>
-                    <td>$125.365</td>
                     <td>
                       <button className='btn btn-info mx-2 btn-sm'>Editar</button>
                       <button className='btn btn-danger  btn-sm'>Eliminar</button>
@@ -100,14 +89,10 @@ function App() {
                     <td>Apple iPhone XR (Red, 128 GB)</td>
                     <td>$125.365</td>
                     <td>
-                      <button className='btn btn-info mx-2 btn-sm'>Editar</button>
-                      <button className='btn btn-danger  btn-sm'>Eliminar</button>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked />
+                      </div>
                     </td>
-                  </tr>
-                  <tr>
-                    <th scope="row">SKU-78765</th>
-                    <td>Apple iPhone XR (Red, 128 GB)</td>
-                    <td>$125.365</td>
                     <td>
                       <button className='btn btn-info mx-2 btn-sm'>Editar</button>
                       <button className='btn btn-danger  btn-sm'>Eliminar</button>
@@ -117,6 +102,11 @@ function App() {
                     <th scope="row">SKU-78765</th>
                     <td>Apple iPhone XR (Red, 128 GB)</td>
                     <td>$125.365</td>
+                    <td>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked />
+                      </div>
+                    </td>
                     <td>
                       <button className='btn btn-info mx-2 btn-sm'>Editar</button>
                       <button className='btn btn-danger  btn-sm'>Eliminar</button>
