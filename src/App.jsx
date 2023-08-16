@@ -16,7 +16,7 @@ function App() {
                 <h1 className="display-4" style={{  fontWeight:'lighter'}}>Product Reducer</h1>
             </div>
         </div>
-        <div className="row p-5"  style={{ backgroundColor: '#000'}}>
+        <div className="row"  style={{ backgroundColor: '#000', padding:50}}>
             <AddProduct />
             <ListProduct />
         </div>

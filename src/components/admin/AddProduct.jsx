@@ -8,7 +8,6 @@ export const AddProduct = () => {
 
     <div className="col-lg-4" >
         <form>
-            <div className='text-white  my-3' style={{ fontSize: 25}}>Alta de Producto</div>
             <div className="mb-3">
                 <input 
                     type="text" 
