@@ -1,16 +1,14 @@
 export const productReducer = (state = [], action) => {
   switch (action.type) {
-    case '[Product] - ADD-PRODUCT':
-      console.log('Agregar');
+    case "[Product] - ADD-PRODUCT":
+      return [...state, action.payload];
+
+    case "[Product] - EDIT-PRODUCT":
+      console.log("Editar producto");
       break;
 
-    case '[Product] - EDIT-PRODUCT':
-      console.log('Agregar');
-      break;
-
-    case '[Product] - DELETE-PRODUCT':
-      console.log('Agregar');
-      break;
+    case "[Product] - DELETE-PRODUCT":
+      return action.payload;
 
     default:
       return state;

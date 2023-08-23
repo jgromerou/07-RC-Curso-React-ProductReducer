@@ -1,4 +1,13 @@
-import { useRef, useState } from 'react';
+import { useRef } from "react";
+import useForm from "../../hooks/useForm";
+
+const data = {
+  id: "sku-0002",
+  title: "Galaxy A13",
+  category: "Celulares",
+  price: "$80.000",
+  description: "Celular 5g con, 3 Camaras",
+};
 
 export const AddProduct = ({ onClickAddProduct }) => {
   const titleRef = useRef(null);
@@ -6,14 +15,7 @@ export const AddProduct = ({ onClickAddProduct }) => {
   const priceRef = useRef(null);
   const descriptionRef = useRef(null);
 
-  const [form, setForm] = useState({});
-
-  const onChangeForm = (value, field) => {
-    setForm({
-      ...form,
-      [field]: value,
-    });
-  };
+  const { form, onChangeForm } = useForm(data);
 
   return (
     <div className="col-lg-4">
@@ -25,6 +27,7 @@ export const AddProduct = ({ onClickAddProduct }) => {
             className="form-control"
             placeholder="Titulo del  Producto"
             name="title"
+            value={form.title}
             onChange={(event) =>
               onChangeForm(event.target.value, titleRef.current.name)
             }
@@ -37,6 +40,7 @@ export const AddProduct = ({ onClickAddProduct }) => {
             className="form-control"
             placeholder="Categoria"
             name="category"
+            value={form.category}
             onChange={(event) =>
               onChangeForm(event.target.value, categoryRef.current.name)
             }
@@ -49,6 +53,7 @@ export const AddProduct = ({ onClickAddProduct }) => {
             className="form-control"
             placeholder="Precio"
             name="price"
+            value={form.price}
             onChange={(event) =>
               onChangeForm(event.target.value, priceRef.current.name)
             }
@@ -61,6 +66,7 @@ export const AddProduct = ({ onClickAddProduct }) => {
             rows="3"
             placeholder="Descripcion del producto"
             name="description"
+            value={form.description}
             onChange={(event) =>
               onChangeForm(event.target.value, descriptionRef.current.name)
             }
