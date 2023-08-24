@@ -1,9 +1,13 @@
-import { useEffect, useReducer, useState } from "react";
+import { useContext, useEffect, useReducer, useState } from "react";
 import { AddProduct } from "./components/admin/AddProduct";
 import { ListProduct } from "./components/admin/ListProduct";
 import { Product } from "./components/products/Product";
 import "./styles/index.css";
 import { productReducer } from "./reducers/productReducer";
+import { AuthContext } from "./contexts/AuthContext";
+
+import { ProfilePage } from "./ProfilePage";
+import { NavBar } from "./components/ui/NavBar";
 
 const initialProducts = [
   {
@@ -40,6 +44,7 @@ function App() {
   // const [products, setProducts] = useState(initialProducts);
 
   const [products, dispatch] = useReducer(productReducer, initialProducts);
+  const { user } = useContext(AuthContext);
 
   // useEffect(() => {
   //   console.log(products);
@@ -70,29 +75,34 @@ function App() {
 
   return (
     <>
+      <NavBar />
       <div className="container-fliud">
-        <div className="row text-center mb-5 mt-5">
+        {/* <div className="row text-center mb-5 mt-5">
           <div className="col-lg-7 mx-auto">
             <h1 className="display-4" style={{ fontWeight: "lighter" }}>
               Product Reducer
             </h1>
           </div>
-        </div>
-        <div className="row" style={{ backgroundColor: "#000", padding: 50 }}>
-          <AddProduct
-            onClickAddProduct={(event, value) =>
-              onClickAddProduct(event, value)
-            }
-          />
-          <ListProduct
-            products={products}
-            onDeleteProduct={(value) => onDeleteProduct(value)}
-          />
-        </div>
+        </div> */}
+        {user && user.isLogged && (
+          <div className="row" style={{ backgroundColor: "#000", padding: 50 }}>
+            <AddProduct
+              onClickAddProduct={(event, value) =>
+                onClickAddProduct(event, value)
+              }
+            />
+            <ListProduct
+              products={products}
+              onDeleteProduct={(value) => onDeleteProduct(value)}
+            />
+          </div>
+        )}
         <div className="row p-5">
           <Product products={products} />
         </div>
       </div>
+
+      <ProfilePage />
     </>
   );
 }
