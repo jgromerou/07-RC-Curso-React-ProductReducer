@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 export const ListProduct = ({
   products,
@@ -22,7 +22,7 @@ export const ListProduct = ({
               <tr key={product.id}>
                 <th scope="row">{product.id}</th>
                 <td>{product.title}</td>
-                <td>{product.price}</td>
+                <td>${product.price}</td>
                 <td>
                   <button
                     className="btn btn-info mx-2 btn-sm"

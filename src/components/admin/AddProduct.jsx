@@ -1,5 +1,5 @@
-import { useEffect, useRef, useState } from 'react';
-import useForm from '../../hooks/useForm';
+import { useEffect, useRef, useState } from "react";
+import useForm from "../../hooks/useForm";
 
 // const data = {
 //   id: 'sku-0002',
@@ -15,7 +15,8 @@ export const AddProduct = ({ onClickAddProduct, productEditID = {} }) => {
   const categoryRef = useRef(null);
   const priceRef = useRef(null);
   const descriptionRef = useRef(null);
-  const { form, onChangeForm } = useForm(productEditID);
+  const { id, title, category, price, description, onChangeForm } =
+    useForm(productEditID);
 
   return (
     <div className="col-lg-4">
@@ -27,7 +28,8 @@ export const AddProduct = ({ onClickAddProduct, productEditID = {} }) => {
             className="form-control"
             placeholder="Id del Producto"
             name="id"
-            value={form.id}
+            value={id || ""}
+            disabled={true}
             onChange={(event) =>
               onChangeForm(event.target.value, titleRef.current.name)
             }
@@ -40,7 +42,7 @@ export const AddProduct = ({ onClickAddProduct, productEditID = {} }) => {
             className="form-control"
             placeholder="Titulo del  Producto"
             name="title"
-            value={form.title}
+            value={title || ""}
             onChange={(event) =>
               onChangeForm(event.target.value, titleRef.current.name)
             }
@@ -53,7 +55,7 @@ export const AddProduct = ({ onClickAddProduct, productEditID = {} }) => {
             className="form-control"
             placeholder="Categoria"
             name="category"
-            value={form.category}
+            value={category || ""}
             onChange={(event) =>
               onChangeForm(event.target.value, categoryRef.current.name)
             }
@@ -62,11 +64,11 @@ export const AddProduct = ({ onClickAddProduct, productEditID = {} }) => {
         <div className="mb-3">
           <input
             ref={priceRef}
-            type="text"
+            type="number"
             className="form-control"
             placeholder="Precio"
             name="price"
-            value={form.price}
+            value={price || ""}
             onChange={(event) =>
               onChangeForm(event.target.value, priceRef.current.name)
             }
@@ -79,7 +81,7 @@ export const AddProduct = ({ onClickAddProduct, productEditID = {} }) => {
             rows="3"
             placeholder="Descripcion del producto"
             name="description"
-            value={form.description}
+            value={description || ""}
             onChange={(event) =>
               onChangeForm(event.target.value, descriptionRef.current.name)
             }
@@ -87,7 +89,15 @@ export const AddProduct = ({ onClickAddProduct, productEditID = {} }) => {
         </div>
         <button
           className="btn btn-info mb-3"
-          onClick={(event) => onClickAddProduct(event, form)}
+          onClick={(event) =>
+            onClickAddProduct(event, {
+              id,
+              title,
+              category,
+              price,
+              description,
+            })
+          }
         >
           GUARDAR
         </button>

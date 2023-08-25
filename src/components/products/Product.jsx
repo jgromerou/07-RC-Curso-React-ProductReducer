@@ -16,7 +16,7 @@ export const Product = ({ products }) => {
                     {product.description}
                   </p>
                   <div className="d-flex align-items-center justify-content-between mt-1">
-                    <h6 className="font-weight-bold my-2">{product.price}</h6>
+                    <h6 className="font-weight-bold my-2">${product.price}</h6>
                   </div>
                 </div>
                 <img

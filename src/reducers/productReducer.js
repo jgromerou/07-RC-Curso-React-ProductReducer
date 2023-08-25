@@ -4,8 +4,7 @@ export const productReducer = (state = [], action) => {
       return [...state, action.payload];
 
     case "[Product] - EDIT-PRODUCT":
-      console.log("Editar producto");
-      break;
+      return action.payload;
 
     case "[Product] - DELETE-PRODUCT":
       return action.payload;
