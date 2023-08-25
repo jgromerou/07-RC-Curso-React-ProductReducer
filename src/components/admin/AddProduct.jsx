@@ -1,21 +1,20 @@
-import { useRef } from "react";
-import useForm from "../../hooks/useForm";
+import { useEffect, useRef, useState } from 'react';
+import useForm from '../../hooks/useForm';
 
-const data = {
-  id: "sku-0002",
-  title: "Galaxy A13",
-  category: "Celulares",
-  price: "$80.000",
-  description: "Celular 5g con, 3 Camaras",
-};
+// const data = {
+//   id: 'sku-0002',
+//   title: 'Galaxy A13',
+//   category: 'Celulares',
+//   price: '$80.000',
+//   description: 'Celular 5g con, 3 Camaras',
+// };
 
-export const AddProduct = ({ onClickAddProduct }) => {
+export const AddProduct = ({ onClickAddProduct, productEditID = {} }) => {
   const titleRef = useRef(null);
   const categoryRef = useRef(null);
   const priceRef = useRef(null);
   const descriptionRef = useRef(null);
-
-  const { form, onChangeForm } = useForm(data);
+  const { form, onChangeForm } = useForm(productEditID);
 
   return (
     <div className="col-lg-4">
@@ -73,7 +72,7 @@ export const AddProduct = ({ onClickAddProduct }) => {
           ></textarea>
         </div>
         <button
-          className="btn btn-info"
+          className="btn btn-info mb-3"
           onClick={(event) => onClickAddProduct(event, form)}
         >
           GUARDAR

@@ -1,16 +1,16 @@
-import { useState } from "react";
-import { AuthContext } from "../contexts/AuthContext";
+import { useState } from 'react';
+import { AuthContext } from '../contexts/AuthContext';
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState({
-    isLogged: false,
-    name: null,
+    isLogged: true,
+    name: 'admin',
   });
 
   const login = () => {
     setUser({
       isLogged: true,
-      name: "Gerardo Romero",
+      name: 'Gerardo Romero',
     });
   };
 

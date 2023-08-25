@@ -1,6 +1,10 @@
-import React from "react";
+import React from 'react';
 
-export const ListProduct = ({ products, onDeleteProduct }) => {
+export const ListProduct = ({
+  products,
+  onDeleteProduct,
+  onChargeProductFormId,
+}) => {
   return (
     <div className="col-lg-8">
       <table className="table mt-6">
@@ -20,7 +24,12 @@ export const ListProduct = ({ products, onDeleteProduct }) => {
                 <td>{product.title}</td>
                 <td>{product.price}</td>
                 <td>
-                  <button className="btn btn-info mx-2 btn-sm">Editar</button>
+                  <button
+                    className="btn btn-info mx-2 btn-sm"
+                    onClick={() => onChargeProductFormId(product)}
+                  >
+                    Editar
+                  </button>
                   <button
                     className="btn btn-danger btn-sm"
                     onClick={() => onDeleteProduct(product.id)}
