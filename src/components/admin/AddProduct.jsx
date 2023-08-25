@@ -10,6 +10,7 @@ import useForm from '../../hooks/useForm';
 // };
 
 export const AddProduct = ({ onClickAddProduct, productEditID = {} }) => {
+  const idRef = useRef(null);
   const titleRef = useRef(null);
   const categoryRef = useRef(null);
   const priceRef = useRef(null);
@@ -19,6 +20,19 @@ export const AddProduct = ({ onClickAddProduct, productEditID = {} }) => {
   return (
     <div className="col-lg-4">
       <form>
+        <div className="mb-3">
+          <input
+            ref={idRef}
+            type="text"
+            className="form-control"
+            placeholder="Id del Producto"
+            name="id"
+            value={form.id}
+            onChange={(event) =>
+              onChangeForm(event.target.value, titleRef.current.name)
+            }
+          />
+        </div>
         <div className="mb-3">
           <input
             ref={titleRef}

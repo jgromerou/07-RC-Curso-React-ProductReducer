@@ -54,17 +54,18 @@ function App() {
 
   const onClickAddProduct = (e, form) => {
     e.preventDefault();
-    const newProductoObj = {
-      id: 'sku-0005',
-      title: form.title,
-      category: form.category,
-      price: form.price,
-      description: form.description,
-    };
-    dispatch({
-      type: '[Product] - ADD-PRODUCT',
-      payload: newProductoObj,
-    });
+    console.log(form);
+    // const newProductoObj = {
+    //   id: 'sku-0005',
+    //   title: form.title,
+    //   category: form.category,
+    //   price: form.price,
+    //   description: form.description,
+    // };
+    // dispatch({
+    //   type: '[Product] - ADD-PRODUCT',
+    //   payload: newProductoObj,
+    // });
   };
 
   const onDeleteProduct = (productId) => {
@@ -76,13 +77,6 @@ function App() {
   };
 
   const onChargeProductFormId = (product) => {
-    // const newProductEdited = {
-    //   id: productId,
-    //   title: form.title,
-    //   category: form.category,
-    //   price: form.price,
-    //   description: form.description,
-    // };
     setProductEditID(product);
     // dispatch({
     //   type: '[Product] - EDIT-PRODUCT',
