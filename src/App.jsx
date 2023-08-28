@@ -44,7 +44,7 @@ function App() {
   // const [products, setProducts] = useState(initialProducts);
 
   const [products, dispatch] = useReducer(productReducer, initialProducts);
-  const { user } = useContext(AuthContext);
+  const { state } = useContext(AuthContext);
 
   const [productEditID, setProductEditID] = useState({
     id: '',
@@ -123,7 +123,7 @@ function App() {
             </h1>
           </div>
         </div> */}
-        {user && user.isLogged && (
+        {state && state.isLogged && (
           <div className="row" style={{ backgroundColor: '#000', padding: 20 }}>
             <AddProduct
               onClickAddProduct={(event, value) =>

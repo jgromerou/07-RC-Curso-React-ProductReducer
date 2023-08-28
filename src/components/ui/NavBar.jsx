@@ -1,8 +1,8 @@
-import { useContext } from "react";
-import { AuthContext } from "../../contexts/AuthContext";
+import { useContext } from 'react';
+import { AuthContext } from '../../contexts/AuthContext';
 
 export const NavBar = () => {
-  const { user, login } = useContext(AuthContext);
+  const { state, login } = useContext(AuthContext);
   return (
     <header className="p-3 text-bg-dark">
       <div className="container-fluid">
@@ -13,7 +13,7 @@ export const NavBar = () => {
             </a>
           </div>
           <div className="text-end">
-            {user.name}
+            {state.name}
             <button
               type="button"
               className="btn btn-outline-light m-2"

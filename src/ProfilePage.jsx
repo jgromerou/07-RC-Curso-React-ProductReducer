@@ -1,12 +1,12 @@
-import { useContext } from "react";
-import { AuthContext } from "./contexts/AuthContext";
+import { useContext } from 'react';
+import { AuthContext } from './contexts/AuthContext';
 
 export const ProfilePage = () => {
-  const { user } = useContext(AuthContext);
+  const { state } = useContext(AuthContext);
   return (
     <>
       <h3>Datos de Usuario</h3>
-      <pre>{JSON.stringify(user, null, 3)}</pre>
+      <pre>{JSON.stringify(state, null, 3)}</pre>
     </>
   );
 };

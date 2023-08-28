@@ -1,21 +1,26 @@
-import { useState } from 'react';
+import { useReducer } from 'react';
 import { AuthContext } from '../contexts/AuthContext';
+import { authReducer } from '../reducers/authReducer';
+import { types } from '../types/types';
+
+const initialState = {
+  isLogged: false,
+  name: null,
+};
 
 export const AuthProvider = ({ children }) => {
-  const [user, setUser] = useState({
-    isLogged: true,
-    name: 'admin',
-  });
+  const [state, dispatch] = useReducer(authReducer, initialState);
 
   const login = () => {
-    setUser({
-      isLogged: true,
-      name: 'Gerardo Romero',
+    //apirest
+    dispatch({
+      type: types.auth.loginType,
+      payload: 'Fabian Romero',
     });
   };
 
   return (
-    <AuthContext.Provider value={{ user, login }}>
+    <AuthContext.Provider value={{ state, login }}>
       {children}
     </AuthContext.Provider>
   );
