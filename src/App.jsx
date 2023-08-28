@@ -124,7 +124,7 @@ function App() {
           </div>
         </div> */}
         {user && user.isLogged && (
-          <div className="row" style={{ backgroundColor: '#000', padding: 50 }}>
+          <div className="row" style={{ backgroundColor: '#000', padding: 20 }}>
             <AddProduct
               onClickAddProduct={(event, value) =>
                 onClickAddProduct(event, value)
