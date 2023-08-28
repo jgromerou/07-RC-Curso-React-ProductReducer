@@ -6,5 +6,6 @@ export const types = {
   products: {
     addType: '[PRODUCT]-ADD',
     deleteType: '[PRODUCT]-DELETE',
+    editType: '[PRODUCT]-EDIT',
   },
 };
