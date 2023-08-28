@@ -1,11 +1,11 @@
-import React from "react";
+import React from 'react';
 
 export const Product = ({ products }) => {
   return (
     <>
       {products.map((product) => (
-        <div key={product.id} className="col-lg-4">
-          <ul className="list-group shadow">
+        <div key={product.id} className="col-sm-6 col-md-4 col-lg-3 mt-2">
+          <ul className="list-group shadow d-flex justify-content-center">
             <li className="list-group-item">
               <div className="media align-items-lg-center flex-column flex-lg-row p-3">
                 <div className="media-body order-2 order-lg-1">

@@ -20,7 +20,7 @@ export const ListProduct = ({
           <tbody>
             {products.map((product) => {
               return (
-                <tr key={product.id}>
+                <tr key={product.id} className="text-center">
                   <th scope="row">{product.id}</th>
                   <td>{product.title}</td>
                   <td>${product.price}</td>
