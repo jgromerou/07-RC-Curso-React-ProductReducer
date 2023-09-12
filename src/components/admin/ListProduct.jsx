@@ -31,6 +31,7 @@ export const ListProduct = ({
                     Editar
                   </button>
                   <button
+                    data-testid="delete"
                     className="btn btn-danger mb-1 btn-sm"
                     onClick={() => onDeleteProduct(product.id)}
                   >
