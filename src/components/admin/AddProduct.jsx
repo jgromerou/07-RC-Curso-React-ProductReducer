@@ -1,5 +1,5 @@
-import { useEffect, useRef, useState } from "react";
-import useForm from "../../hooks/useForm";
+import { useEffect, useRef, useState } from 'react';
+import useForm from '../../hooks/useForm';
 
 // const data = {
 //   id: 'sku-0002',
@@ -28,7 +28,7 @@ export const AddProduct = ({ onClickAddProduct, productEditID = {} }) => {
             className="form-control"
             placeholder="Id del Producto"
             name="id"
-            value={id || ""}
+            value={id || ''}
             disabled={true}
             onChange={(event) =>
               onChangeForm(event.target.value, titleRef.current.name)
@@ -42,7 +42,7 @@ export const AddProduct = ({ onClickAddProduct, productEditID = {} }) => {
             className="form-control"
             placeholder="Titulo del  Producto"
             name="title"
-            value={title || ""}
+            value={title || ''}
             onChange={(event) =>
               onChangeForm(event.target.value, titleRef.current.name)
             }
@@ -55,7 +55,7 @@ export const AddProduct = ({ onClickAddProduct, productEditID = {} }) => {
             className="form-control"
             placeholder="Categoria"
             name="category"
-            value={category || ""}
+            value={category || ''}
             onChange={(event) =>
               onChangeForm(event.target.value, categoryRef.current.name)
             }
@@ -64,11 +64,11 @@ export const AddProduct = ({ onClickAddProduct, productEditID = {} }) => {
         <div className="mb-3">
           <input
             ref={priceRef}
-            type="number"
+            type="text"
             className="form-control"
             placeholder="Precio"
             name="price"
-            value={price || ""}
+            value={price || ''}
             onChange={(event) =>
               onChangeForm(event.target.value, priceRef.current.name)
             }
@@ -81,7 +81,7 @@ export const AddProduct = ({ onClickAddProduct, productEditID = {} }) => {
             rows="3"
             placeholder="Descripcion del producto"
             name="description"
-            value={description || ""}
+            value={description || ''}
             onChange={(event) =>
               onChangeForm(event.target.value, descriptionRef.current.name)
             }
